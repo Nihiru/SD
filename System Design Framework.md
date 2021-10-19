@@ -10,7 +10,7 @@
         - When defining features make sure to list out features from user perspective and then get it reviewed by interviewer
 - Clarifying the terminologies present in the requirements specifications.
 - Since it is a System Design interview. Focus should be on the system and not on the algorithm and model.
-
+- Make sure all the feature clarifications question are answered before proceeding with the **Design** phase. 
 
 ### Non-Functional Requirements
 - You should ask questions to build **preliminary tuition** on what could break the system, and when it does, some areas that can be
@@ -24,7 +24,7 @@ compromised to scale for those bottleneck challenges.
     - Its crucial to figure out the distribution to discuss geo locality design.
 - Scenarios that can break your system.
     - Considering a real-life scenarios highlights the worst and difficult cases for the application. By making trade-offs user can demonstrate his ability to think differently and make decision based on that.
-    - **Thundering Herd prblem**
+    - [**Thundering Herd prblem**](https://en.wikipedia.org/wiki/Thundering_herd_problem)
     - A design without bottlenecks isn't challening and interesting.
 - Scenarios that leads to high storage and bandwidth
     - Scaling of storage system involves factors such as amount of memory being passed through a request, how frequently the servers handles the request.
@@ -50,3 +50,24 @@ compromised to scale for those bottleneck challenges.
     - High Durability defines the data needs to be available when the user requests it. ex: Photo sharing application
     - Medium Durability defines that losing data is allowed. ex: Chat application
     - Low Durability defines data history is ignored completely. ex: Drivers location on a delivery app as it updates itself.
+
+## Define API
+- The purpose of the API is to have a detailed agreement between the end user and backend system.
+- How to define API
+    - API is a broad term since it could be from a mobile client, web client, internal system, single machine inter process call etc.
+    - An API is made up of 
+        - API Signature
+            - After identifying the **scope** of the API. Based on its definition Naming the API is the most important aspect.
+        - Input Parameter
+            - Justification required for the defined parameters
+            - They should be important to functional requirements
+            - Identify the core functionality from the requirement
+            - Missing input parameter questions the interviewee careless while gathering requirements.
+            - Input shouldn't be vague and nonsensical
+        - Output Response
+            - It shouldn't include extraneous details irrelevant to the functional requirement or miss important responses necessary for the functional requirement
+            - Ensure the Response satisfies the requirement
+            - Being explicit about the response status and its corresponding response codes if any.
+            - Response data structure should also match the requirement.
+            - Identifying **inefficiencies** in the response data structure is important for large data results.
+            - Making sure only vague and nonsensical output is returned.
