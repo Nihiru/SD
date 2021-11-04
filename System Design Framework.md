@@ -33,7 +33,16 @@ compromised to scale for those bottleneck challenges.
 - What is the availability and consistency requirements?
     - The goal is to discuss whether the system can tune the user product experience's consistency to meet the availbility demand better
     - [CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem)
-    - Instead of designing a whole system based on AP or CP. Components of a system can be classified into an AP or CP. Further, features present within those components can be categorised into a AP or CP which gives more clarity into the system
+    - Instead of designing a whole system based on AP or CP. Components of a system can be classified into an AP or CP. Further, features present within those components can be categorised into a AP or CP which gives more clarity into the system.
+    - Components in the system
+        - Load Balancers
+        - Web Servers
+        - Application Servers
+        - Database Servers
+        - Cache
+        - Queues
+        - Publisher/Subscriber
+        - Offline Jobs
     - Discuss from user perspective.
 - What is the accuracy requirements?
     -  Accuracy is different from consistency.
@@ -62,7 +71,7 @@ compromised to scale for those bottleneck challenges.
             - Justification required for the defined parameters
             - They should be important to functional requirements
             - Identify the core functionality from the requirement
-            - Missing input parameter questions the interviewee careless while gathering requirements.
+            - Missing input parameter questions the interviewee carelessness while gathering requirements.
             - Input shouldn't be vague and nonsensical
         - Output Response
             - It shouldn't include extraneous details irrelevant to the functional requirement or miss important responses necessary for the functional requirement
@@ -70,4 +79,21 @@ compromised to scale for those bottleneck challenges.
             - Being explicit about the response status and its corresponding response codes if any.
             - Response data structure should also match the requirement.
             - Identifying **inefficiencies** in the response data structure is important for large data results.
-            - Making sure only vague and nonsensical output is returned.
+            - Making sure only vague and nonsensical output is not returned.
+    
+## High Level Diagram Design
+- Purpose
+    - Setting up the foundations for the design and give clarity to the interviewer on which parts of the interview are important to satisfy requirements.
+    - It could a omit a behavior of an end-to-end flow that satisfies the requirement.
+- Start from the top with the API and working yourself down to the last component
+    - 1: Define the client for an API
+    - 2: Define the next sets of logical blocks 
+    - 3: Repeat step 1 for the next API
+- Make sure understanding happens around the core of the question.
+- Avoiding unnecessary features to the design
+- Don't prematurely optimize
+    - Do not dig into sections and prematurely optimize without completing the holistic picture first
+    - Coming up with important discussion points is a critical part and maintaining it on a list
+- Have logical separation between services
+- Take a moment to walk through the flow of the defined APIs to ensure the requirement is satisfied
+
